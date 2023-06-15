@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <!-- 最初の設定は終わっています　必要な方は触ってください -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Carless travel</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="img/png" href="img/favicon.png" />
+  </head>
+  <!-- 最初の設定は終わっています　必要な方は触ってください -->
+
+  <body>
+    <!-- この中に記述していく -->
+    <!-- ここから下にコードを書く -->
+    <div id="home">
+      <header class="page-header wrapper">
+        <div class="logo-area">
+          <a href="plan.html"
+            ><img class="logo" src="img/logo.jpg" alt="Carlesstravelホーム"
+          /></a>
+        </div>
+        <div class="space-area"></div>
+        <nav>
+          <ul class="main-nav"></ul>
+        </nav>
+      </header>
+    </div>
+
+    <div class="wrapper">
+      <article>
+        <div id="main06">
+          <div class="main-content">
+            <h1 class="main-title">Let's Enjoy!</h1>
+            <p>最寄駅あるかな？</p>
+          </div>
+        </div>
+        <div id="station" class="contents">
+          <h2 class="title">最寄駅あるかな？</h2>
+
+          <form id="goal-form">
+            <label for="goal">行きたい場所:</label>
+            <input type="text" id="goal" name="goal" required /><br /><br />
+            <button id="btn1">送信</button>
+          </form>
+
+          <select id="goal-info"></select>
+
+          <form id="station-form">
+            <label for="x">経度:</label>
+            <input type="text" id="x" name="x" required /><br /><br />
+            <label for="y">緯度:</label>
+            <input type="text" id="y" name="y" required /><br /><br />
+            <button id="btn2">送信</button>
+          </form>
+
+          <div id="station-info"></div>
+          <div id="soudan-response"></div>
+          <button id="send">登録</button>
+          <br />
+          Powered by
+          <a href="http://express.heartrails.com/api.html"
+            >HeartRails Express</a
+          >
+        </div>
+      </article>
+    </div>
+
+    <footer>
+      <div class="wrapper">
+        <p>
+          <small>&copy;2023 Y F</small>
+        </p>
+      </div>
+    </footer>
+    <!-- ここから上にコードを書く -->
+    <!-- この中に記述していく -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="js/station.js"></script>
+  </body>
+</html>
+
+<!-- <script
+      type="text/javascript"
+      src="http://express.heartrails.com/api/express.js"
+    ></script> -->
+<!-- <script src="server.js"></script> -->

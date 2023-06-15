@@ -1,0 +1,310 @@
+/* ここから下に記載していく */
+@charset "UTF-8";
+
+/* 共通部分
+---------------------------- */
+html,
+header {
+  max-width: 100vw;
+  font-size: 100%;
+}
+body {
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", "YuGothic",
+    "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+  line-height: 1.7;
+  color: #222222;
+}
+a {
+  text-decoration: none;
+}
+p {
+  line-height: 1.5;
+}
+img {
+  max-width: 100%;
+}
+.wrapper {
+  text-align: center;
+}
+.contents {
+  padding-top: 4vh;
+  padding-bottom: 4vh;
+  max-width: 100%;
+  margin: 0px 2%;
+}
+.title {
+  font-weight: bold;
+  font-size: 24px;
+}
+.sub-title {
+  margin-bottom: 30px;
+}
+
+/* 共通部分（ヘッダー）
+---------------------------- */
+#home {
+  height: 10vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 1000;
+  border-bottom: 1px solid #707070;
+}
+#home a {
+  margin: 0;
+}
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  height: 8vh;
+  padding: 2vh 2vw 0 2vw;
+}
+.logo-area {
+  padding: 0;
+  width: 32vw;
+  max-height: 100%;
+}
+@media (max-width: 600px) {
+  .logo-area {
+    padding: 0;
+    width: 48vw;
+    max-height: 100%;
+  }
+}
+.logo {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+.logo img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.space-area {
+  width: 32vw;
+}
+@media (max-width: 600px) {
+  .space-area {
+    display: none;
+  }
+}
+.main-nav {
+  display: flex;
+  justify-content: center;
+  width: 32vw;
+  padding: 2vh 0;
+  font-size: 21px;
+  list-style: none;
+}
+@media (max-width: 600px) {
+  .main-nav {
+    display: flex;
+    justify-content: center;
+    width: 48vw;
+    padding: 1vh;
+    font-size: 18px;
+    list-style: none;
+  }
+}
+.main-nav li {
+  margin-left: 50px;
+}
+@media (max-width: 600px) {
+  .main-nav li {
+    margin-left: 30px;
+  }
+}
+.main-nav a {
+  color: #222222;
+}
+.main-nav a:hover {
+  color: #0bd;
+}
+
+/* 共通部分（ボタン）
+---------------------------- */
+.button {
+  font-size: 20px;
+  background: maroon;
+  color: #fff;
+  padding: 10px 30px;
+  margin: 10px;
+}
+@media (max-width: 600px) {
+  .button {
+    font-size: 20px;
+    background: maroon;
+    color: #fff;
+    padding: 10px 10px;
+    margin: 5px;
+  }
+}
+.button:hover {
+  background: #0090aa;
+}
+.button:disabled {
+  background: #ccc;
+}
+
+/* 共通部分（メインビジュアル）
+---------------------------- */
+#main06 {
+  margin-top: 10vh;
+  background-image: url(../img/travel_102.jpg), linear-gradient(white, #97cdf3);
+  background-color: #e6f0f0;
+  background-blend-mode: hard-light;
+  /* background-size: 80%; 画像を約80%に縮小 */
+  background-repeat: no-repeat; /* 画像を繰り返し表示しない */
+  background-position: center top -70px; /* 画像を中央上に配置（上方向に10px上げる） */
+  height: 250px;
+  color: black;
+  position: relative;
+  min-width: 100vw;
+  background-size: cover;
+  z-index: 100;
+}
+.main-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.main-title {
+  font-family: "philosopher", serif;
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+@media (max-width: 600px) {
+  .main-title {
+    font-family: "philosopher", serif;
+    font-size: 35px;
+    margin-bottom: 30px;
+  }
+}
+.main-content p {
+  font-size: 18px;
+}
+@media (max-width: 600px) {
+  .main-content p {
+    font-size: 15px;
+  }
+}
+
+/* 共通部分（モーダル）
+---------------------------- */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 50%);
+  padding: 40px 20px;
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  box-sizing: border-box;
+  z-index: 200;
+}
+.modal-container:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+.modal-container.active {
+  opacity: 1;
+  visibility: visible;
+}
+.modal-body {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 500px;
+  width: 90%;
+}
+.modal-close {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -40px;
+  right: -40px;
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+.modal-content {
+  background: #fff;
+  text-align: left;
+  padding: 30px;
+}
+
+/* STATION（最寄駅あるかな？）、map_kadai.html
+---------------------------- */
+#station .title {
+  color: maroon;
+  margin-bottom: 30px;
+}
+#station ul {
+  padding: 0;
+  border-top: 1px solid #000000;
+  display: table; /* 定義 */
+  table-layout: fixed;
+  width: 96%;
+  font-size: 80%;
+  margin: 0 3%;
+  text-align: center;
+}
+#station li {
+  list-style-type: none;
+  border: 1px solid #666;
+  background-color: #fff;
+  display: table-cell; /* 定義 */
+  cursor: pointer;
+  color: maroon;
+}
+#station li:hover {
+  background: maroon;
+  color: #fff;
+}
+textarea {
+  margin: 3%;
+  width: 90%;
+  height: 100px;
+  background-color: white;
+}
+#station .key {
+  margin: 0 3%;
+  width: 95%;
+  font-size: 80%;
+  background-color: #e1efff;
+  box-shadow: 3px 3px 3px 3px #555;
+}
+#station table {
+  margin: 20px 3%;
+  border: 1px solid #8dc3f5;
+  width: 96%;
+}
+#station td {
+  background-color: rgb(241, 239, 239);
+  border-bottom: 1px solid lightgray;
+}
+
+/* フッター
+---------------------------- */
+footer {
+  background: #707070;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+footer p {
+  color: #fff;
+  font-size: 0.875rem;
+}
